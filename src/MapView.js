@@ -6,8 +6,8 @@ const MapView = () => {
   const layerRef = useRef(null);
 
   useEffect(() => {
-    loadModules(['esri/Map', 'esri/views/MapView', 'esri/layers/FeatureLayer', 'esri/widgets/Search'], { css: true })
-      .then(([Map, MapView, FeatureLayer, Search]) => {
+    loadModules(['esri/Map', 'esri/views/MapView', 'esri/layers/FeatureLayer', 'esri/widgets/Search','esri/widgets/Home' ], { css: true })
+      .then(([Map, MapView, FeatureLayer, Search, Home]) => {
         const map = new Map({
           basemap: 'topo-vector',
         });
@@ -32,9 +32,15 @@ const MapView = () => {
           sources: [],
         });
 
+        const homeWidget = new Home({
+          view: view
+        });
+
         view.ui.add(searchWidget, {
           position: 'top-left',
         });
+
+        view.ui.add(homeWidget, 'top-left');
 
         mapViewRef.current = view;
       })
