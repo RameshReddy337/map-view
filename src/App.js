@@ -2,8 +2,8 @@
 import React from 'react';
 import MapView from './MapView';
 import './App.css';
-import { Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Nav, Navbar } from 'react-bootstrap';
+// import { Link } from 'react-router-dom';
 
 function App() {
   return (
